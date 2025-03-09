@@ -62,24 +62,34 @@ catalytic converters.
  - The icon representing the pollution control measure is determined based on the type (planting 
 or catalytic converter).
 User Interaction
+
 The application provides a graphical user interface that allows the user to interact with the 
 simulated ecosystem. Here's how the user should interact with the application:
+
 Initial Setup
+
 When the application starts, the user is prompted with a series of dialog boxes to input the 
 desired number of various components in the ecosystem, such as humans, birds, plants, pollution 
 sources, and pollution control measures. The user should enter the numbers within the specified 
 limits to create the desired ecosystem configuration.
+
 Component Movement
+
 Once the ecosystem is set up, the user can interact with the components using the mouse and 
 keyboard. To move a component, the user should click on it to select it. The selected component 
 will be highlighted with a white border. Using the arrow keys (up, down, left, right), the user can 
 move the selected component within its current panel.
+
 Transferring Components
+
 To transfer a component from one panel to another (e.g., moving a pollution source from the 
-pollution sources panel to a city panel), the user should click on the desired panel while the component is selected. The selected component will be transferred to the new panel, and the 
+pollution sources panel to a city panel), the user should click on the desired panel while the 
+component is selected. The selected component will be transferred to the new panel, and the 
 effects of the component on the ecosystem (e.g., increasing or decreasing pollution levels) will 
 be reflected.
+
 Observing Effects
+
 As the user interacts with the ecosystem by moving components, they can observe the effects on 
 the living beings (humans, plants, birds) and the cities. The population increases based on the 
 presence of humans. The pollution levels of cities will change based on the presence of pollution 
@@ -87,3 +97,49 @@ sources and pollution control measures. The health status of living beings will 
 pollution levels, and they may become sick, heal, or die based on the conditions. The color of the 
 cities will also change to reflect the pollution level, ranging from green (low pollution) to red 
 (high pollution).
+
+Event Listeners
+
+The application makes use of event listeners to handle user interactions and component 
+movements. Here's a breakdown of the key event listeners:
+
+PanelMouseListener
+
+This listener is responsible for handling mouse click events on the various JPanels (cities, 
+pollution sources panel, pollution control panel, etc.). When a component is clicked, it checks if 
+the click occurred within the bounds of a panel. If a component is selected and clicked on a 
+different panel, the listener transfers the selected component to the new panel. It also updates the 
+pollution levels and color of the cities based on the addition or removal of pollution sources and 
+pollution control measures.
+
+KeyListener
+
+This listener is added to each JPanel to handle keyboard events for component movement. The 
+listener checks if a component is selected when the user presses an arrow key (up, down, left, 
+right). If a component is selected, it calculates the new position based on the arrow key pressed 
+and moves the component within the bounds of the panel. If the new position is valid (within the 
+panel bounds), the component's location is updated, and the panel is repainted.
+
+Mouse Listener (added to JPanels)
+
+This listener is responsible for handling mouse-click events on the components within each 
+JPanel. When a component is clicked, it becomes the selected component and is highlighted with 
+a white border. The selected component can then be moved using the arrow keys or transferred to 
+another panel by clicking on the desired panel.
+
+These event listeners work together to provide a smooth and interactive experience for the user, 
+allowing them to manipulate the ecosystem components and observe the resulting effects on the 
+environment and living beings.
+
+By the end of the program, users should have a heightened awareness of the detrimental 
+effects of unchecked pollution sources, such as vehicles, factories, and methane emissions from 
+livestock. Additionally, they should recognize the crucial role pollution control measures like 
+planting and catalytic converters play in mitigating these adverse impacts.
+
+More importantly, we hope that users gain a profound appreciation for the delicate 
+balance that exists within ecosystems and the far-reaching consequences of disrupting this 
+equilibrium. By witnessing the direct impact of their actions on the health and survival of 
+humans, plants, and birds within the simulated cities, users will be better equipped to make 
+informed decisions and advocate for sustainable practices in their daily lives. Ultimately, our 
+goal is to empower users with the knowledge and motivation to become active participants in 
+preserving and protecting the environment for present and future generations
